@@ -1,12 +1,17 @@
-import Contenedor from "./Contenedor";
+import Contenedor from "./components/MainContent.jsx";
 // import Interprete from "./Interprete";
-import Interprete from "./InterpreteAccesible";
-import peliculas from "./data/peliculas";
+import Interprete from "./pages/ReusableCard.jsx";
+import peliculas from "./data/peliculas.js";
+import NavigationBar from "./components/NavigationBar.jsx";
+import MainContent from "./components/MainContent.jsx";
 
 function App() {
   return (
-    
-    <Contenedor titulo="Intérpretes de películas destacadas">
+    <>
+    <header> 
+      <NavigationBar/>
+    </header>
+    <MainContent titulo="Intérpretes de películas destacadas">
       {/* <h1 className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]"> */}
       {/* <h1 className="h1__sqlito [text-shadow:0px_4px_4px_#00000040]"> */}
       {/* <h1 className="contenedor__h1 [text-shadow:0px_4px_4px_#00000040]"> */}
@@ -64,7 +69,8 @@ function App() {
             ))
           )}
         </div>
-    </Contenedor>
+    </MainContent>
+    </>
   )
 }
 
