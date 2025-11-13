@@ -1,6 +1,238 @@
 @import "tailwindcss";
 @import "./theme.css";
 
+/* 
+==========================
+Estilos personalizados
+Se evita sobrecargar visualmente los componentes de react
+==========================
+*/
+
+.card_grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1 w-full mt-8;
+}
+
+.main_content {
+  @apply min-h-screen bg-linear-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center p-8;
+}
+
+.main_section__title {
+  @apply leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]
+}
+
+/* 
+==========================
+Estilos globales
+==========================
+*/
+
+/* Todos los headings y textos mantienen los valores globales */
+[class^="h"],
+[class^="font-heading"],
+[class^="contenedor_"],
+[class^="body-text"] {
+  font-family: var(--font-family);
+
+  font-style: var(--font-style);
+  letter-spacing: var(--letter-spacing);
+}
+
+/* 
+==========================
+Metodología BEM
+==========================
+*/
+
+.contenedor__h1 {
+  font-size: var(--heading-h1-font-size);
+  font-weight: var(--heading-h1-font-weight);
+  line-height: var(--heading-h1-line-height);
+  color: var(--color-primary);
+}
+
+/* 
+==========================
+Sin metodología
+==========================
+*/
+
+.h1__sqlito {
+  font-size: var(--heading-h1-font-size);
+  font-weight: var(--heading-h1-font-weight);
+  line-height: var(--heading-h1-line-height);
+  color: var(--color-primary);
+}
+
+.h2__sqlito {
+  font-size: var(--heading-h2-font-size);
+  font-weight: var(--heading-h2-font-weight);
+  line-height: var(--heading-h2-line-height);
+  color: var(--color-primary);
+}
+
+.h3__sqlito {
+  font-size: var(--heading-h3-font-size);
+  font-weight: var(--heading-h3-font-weight);
+  line-height: var(--heading-h3-line-height);
+  color: var(--color-primary);
+}
+
+.h4__sqlito {
+  font-size: var(--heading-h4-font-size);
+  font-weight: var(--heading-h4-font-weight);
+  line-height: var(--heading-h4-line-height);
+  color: var(--color-primary);
+}
+
+.h5__sqlito {
+  font-size: var(--heading-h5-font-size);
+  font-weight: var(--heading-h5-font-weight);
+  line-height: var(--heading-h5-line-height);
+  color: var(--color-primary);
+}
+
+/* 
+==========================
+Utility-First CSS / Atomic CSS
+==========================
+*/
+
+/* Encabezados genéricos */
+.font-heading-h1 {
+  font-size: var(--heading-h1-font-size);
+  font-weight: var(--heading-h1-font-weight);
+  line-height: var(--heading-h1-line-height);
+}
+
+.font-heading-h2 {
+  font-size: var(--heading-h2-font-size);
+  font-weight: var(--heading-h2-font-weight);
+  line-height: var(--heading-h2-line-height);
+}
+
+.font-heading-h5 {
+  font-size: var(--heading-h5-font-size);
+  font-weight: var(--heading-h5-font-weight);
+  line-height: var(--heading-h5-line-height);
+}
+
+/* Texto base */
+.body-text {
+  line-height: var(--body-text-line-height);
+  color: var(--color-grey-3);
+}
+
+/* 
+==========================
+Colores
+==========================
+*/
+
+.color_primary {
+  color: var(--color-primary);
+}
+.color_secondary {
+  color: var(--color-secondary);
+}
+.color_success {
+  color: var(--color-success);
+}
+.color_warning {
+  color: var(--color-warning);
+}
+.color_error {
+  color: var(--color-error);
+}
+.color_info {
+  color: var(--color-info);
+}
+.color_white {
+  color: var(--color-white);
+}
+.color_black_1 {
+  color: var(--color-black-1);
+}
+.color_black_2 {
+  color: var(--color-black-2);
+}
+.color_black_3 {
+  color: var(--color-black-3);
+}
+.color_grey_1 {
+  color: var(--color-grey-1);
+}
+.color_grey_2 {
+  color: var(--color-grey-2);
+}
+.color_grey_3 {
+  color: var(--color-grey-3);
+}
+.color_grey_4 {
+  color: var(--color-grey-4);
+}
+.color_grey_5 {
+  color: var(--color-grey-5);
+}
+
+/* 
+==========================
+Colores de fondo
+==========================
+*/
+
+.background_color_white {
+  background-color: var(--color-white);
+}
+.background_color_grey_1 {
+  background-color: var(--color-grey-1);
+}
+.background_color_grey_2 {
+  background-color: var(--color-grey-2);
+}
+.background_color_grey_3 {
+  background-color: var(--color-grey-3);
+}
+.background_color_grey_4 {
+  background-color: var(--color-grey-4);
+}
+.background_color_grey_5 {
+  background-color: var(--color-grey-5);
+}
+.background_color_primary {
+  background-color: var(--color-primary);
+}
+.background_color_secondary {
+  background-color: var(--color-secondary);
+}
+.background_color_black_1 {
+  background-color: var(--color-black-1);
+}
+.background_color_black_2 {
+  background-color: var(--color-black-2);
+}
+.background_color_black_3 {
+  background-color: var(--color-black-3);
+}
+
+/* 
+==========================
+Utilidades adicionales
+==========================
+*/
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.primary-bg {
+  background-color: var(--color-primary);
+}
+
+
+/* 
+
+ASI ESTABA ANTES EL ARCHIVO
+
 /** Metodología BEM
  * 
  * Sintaxis:
@@ -135,4 +367,4 @@
   background-color: var(--colorprimary);
 }
 
-
+ */

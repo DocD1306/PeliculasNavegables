@@ -1,18 +1,14 @@
-import NavigationBar from "./components/NavigationBar.jsx";
 import HomePage from "./pages/HomePage.jsx";
-import Header from "./components/Header.jsx";
-// import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate} from 'react-router-dom';
+import InterpretersPage from "./pages/InterpretersPage.jsx";
 
 function App() {
   return (
     <>
-    <Header>
-      <NavigationBar/>
-    </Header>
-    <HomePage/>
-    {/* <Routes element={<HomePage/>}>
-      <Route path="/" element={<HomePage/>} />
-    </Routes> */}
+    <Routes>
+      <Route path="/" element={<InterpretersPage/>} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
     </>
   )
 }
