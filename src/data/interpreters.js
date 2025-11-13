@@ -1,5 +1,6 @@
+// src/data/peliculas.js
 const peliculas = [
-    {
+  {
     id: 1,
     nombre: "El sexto sentido",
     director: "M. Night Shyamalan",

@@ -5,9 +5,6 @@ import NavigationBar from "../components/NavigationBar.jsx";
 function HomePage() {
     return (
       <>
-        <Header>
-          <NavigationBar/>
-        </Header>
         <MainContent titulo="Página de Inicio">
           <p className="body-text">
             Bienvenido a la página de inicio de la aplicación de películas.

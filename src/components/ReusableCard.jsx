@@ -3,8 +3,8 @@ function ReusableCard(props) {
     return (
 
         <article
-            tabIndex="0" // Permite navegar con Tab
-            className="flex flex-col items-start gap-3 p-4 rounded-lg bg-[linear-gradient(0deg,rgba(247,247,247,1)_0%,rgba(247,247,247,1)_100%)] shadow-md hover:shadow-lg transition-shadow duration-300"
+            tabIndex="0"
+            className="article_card"
             aria-label={`Intérprete ${nombre}${esNota10 ? ', destacado' : ''}`}
         >
             {/* Imagen del intérprete con figcaption oculto para lectores de pantalla */}

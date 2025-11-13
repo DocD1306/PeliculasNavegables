@@ -20,6 +20,23 @@ Se evita sobrecargar visualmente los componentes de react
   @apply leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]
 }
 
+.article_card {
+  @apply flex flex-col items-start gap-3 p-4 rounded-lg bg-[linear-gradient(0deg,rgba(247,247,247,1)_0%,rgba(247,247,247,1)_100%)] shadow-md hover:shadow-lg transition-shadow duration-300
+}
+
+.navigation_bar {
+  @apply w-full bg-(--colorprimary) p-4 flex justify-between items-center
+}
+
+.h1__sqlito-sin-color {
+  /* font-family: var(--heading-h1-font-family); */
+  font-size: var(--heading-h1-font-size);
+  font-style: var(--heading-h1-font-style);
+  font-weight: var(--heading-h1-font-weight);
+  letter-spacing: var(--heading-h1-letter-spacing);
+  line-height: var(--heading-h1-line-height);
+}
+
 /* 
 ==========================
 Estilos globales
@@ -367,4 +384,4 @@ ASI ESTABA ANTES EL ARCHIVO
   background-color: var(--colorprimary);
 }
 
- */
+

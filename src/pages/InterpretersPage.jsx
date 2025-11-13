@@ -1,5 +1,5 @@
-import ReusableCard from "./ReusableCard.jsx";
-import movies from "../data/movies.js";
+import ReusableCard from "../components/ReusableCard.jsx";
+import interpreters from "../data/interpreters.js";
 import MainContent from "../components/MainContent.jsx";
 import Header from "../components/Header.jsx";
 import NavigationBar from "../components/NavigationBar.jsx";
@@ -7,18 +7,13 @@ import NavigationBar from "../components/NavigationBar.jsx";
 function InterpretersPage() {
     return (
         <>
-        
-        <Header>
-          <NavigationBar/>
-        </Header>
-
         <MainContent titulo="Intérpretes de películas destacadas">
             
             <p className="body-text"> Listado de intérpretes disponibles:</p>
 
             <div className="card_grid">
                 {
-                movies.map( pelicula =>
+                interpreters.map( pelicula =>
                     pelicula.actores.map((actor, index) => (
                         <ReusableCard
                             key={index}
@@ -32,6 +27,7 @@ function InterpretersPage() {
                 )
                 }
             </div>
+            
         </MainContent>
       </>
 
