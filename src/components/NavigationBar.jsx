@@ -7,10 +7,12 @@ function NavigationBar() {
             <Header>
                 <nav className="navigation_bar">
                     <Link to="/">
-                        <h1 className="color_white h1__sqlito-sin-color">Películas</h1>
+                        <h1 className="color_white font-heading-h1">Películas</h1>
                     </Link>
-                    <Link to="/peliculas">Peliculas</Link>
-                    <Link to="/interpretes">Interpretes</Link>
+                    <div className="navigation_links">
+                        <Link to="/peliculas" className="body-text color_white">Películas</Link>
+                        <Link to="/interpretes" className="body-text color_white">Intérpretes</Link>
+                    </div>
                 </nav>
             </Header>
             <Outlet />  

@@ -1,8 +1,6 @@
 import ReusableCard from "../components/ReusableCard.jsx";
-import interpreters from "../data/interpreters.js";
+import interpreters from "../data/movies-interpreters.js";
 import MainContent from "../components/MainContent.jsx";
-import Header from "../components/Header.jsx";
-import NavigationBar from "../components/NavigationBar.jsx";
 
 function InterpretersPage() {
     return (
