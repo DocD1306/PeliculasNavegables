@@ -3,6 +3,10 @@ import MainContent from "../components/MainContent.jsx";
 import ReusableCard from "../components/ReusableCard.jsx";
 
 function MoviesPage() {
+
+    /*
+    Componente que muestra la página de películas con el listado de películas.
+    */
     return (
         <>
             <MainContent titulo="Nuestro catálogo de películas">
@@ -17,6 +21,7 @@ function MoviesPage() {
                                 nombre={movie.nombre}
                                 foto={movie.cartelera}
                                 esNota10={movie.nota === 10} // pasamos si la nota es 10
+                                textoDestacado="Película destacada"
                             >
                             {movie.resumen}
                             </ReusableCard>

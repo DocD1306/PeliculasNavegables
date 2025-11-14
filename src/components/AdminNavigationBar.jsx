@@ -1,7 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
 import Header from "./Header.jsx";
 
-function NavigationBar() {
+function AdminNavigationBar() {
     return (
         <>
             <Header>
@@ -13,6 +13,7 @@ function NavigationBar() {
                         <Link to="/" className="body-text color_white">Inicio</Link>
                         <Link to="/peliculas" className="body-text color_white">Películas</Link>
                         <Link to="/interpretes" className="body-text color_white">Intérpretes</Link>
+                        <Link to="/admin" className="body-text color_white">Admin</Link>
                     </div>
                 </nav>
             </Header>
@@ -20,4 +21,5 @@ function NavigationBar() {
         </>
     );
 }
-export default NavigationBar;
+
+export default AdminNavigationBar;

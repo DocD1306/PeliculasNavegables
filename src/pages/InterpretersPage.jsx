@@ -18,6 +18,7 @@ function InterpretersPage() {
                             nombre={actor.nombre}
                             foto={actor.imagen}
                             esNota10={pelicula.nota === 10} // pasamos si la nota es 10
+                            textoDestacado="Intérprete destacado"
                         >
                         {actor.biografia}
                         </ReusableCard>

@@ -25,7 +25,7 @@ Se evita sobrecargar visualmente los componentes de react
 }
 
 .navigation_bar {
-  @apply w-full bg-(--colorprimary) p-4 flex justify-between items-center pr-15
+  @apply w-full bg-(--colorprimary) p-4 flex justify-between items-center pr-15 pl-7
 }
 
 .navigation_links {
