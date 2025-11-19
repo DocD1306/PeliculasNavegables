@@ -1,5 +1,5 @@
 import HomePage from "./pages/HomePage.jsx";
-import { Routes, Route, Navigate} from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import InterpretersPage from "./pages/InterpretersPage.jsx";
 import NavigationBar from "./components/NavigationBar.jsx";
 import MoviesPage from "./pages/MoviesPage.jsx";  
@@ -9,7 +9,7 @@ import AdminNavigationBar from "./components/AdminNavigationBar.jsx";
 
 function App() {
 
-  const isAuthenticated = false; // Cambia esto a true o false para simular un usuario autenticado
+  const isAuthenticated = true; // Cambia esto a true o false para simular un usuario autenticado
 
   return (
     <>
