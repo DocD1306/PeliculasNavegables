@@ -13,15 +13,17 @@ function InterpretersPage() {
                 {
                 interpreters.map( pelicula =>
                     pelicula.actores.map((actor, index) => (
-                        <ReusableCard
-                            key={index}
-                            nombre={actor.nombre}
-                            foto={actor.imagen}
-                            esNota10={pelicula.nota === 10} // pasamos si la nota es 10
-                            textoDestacado="Intérprete destacado"
-                        >
-                        {actor.biografia}
-                        </ReusableCard>
+                        <Link to={`/detail/${movie.id}`} key={movie.id} >
+                            <ReusableCard
+                                key={index}
+                                nombre={actor.nombre}
+                                foto={actor.imagen}
+                                esNota10={pelicula.nota === 10} // pasamos si la nota es 10
+                                textoDestacado="Intérprete destacado"
+                            >
+                            {actor.biografia}
+                            </ReusableCard>
+                        </Link>
                     ))
                 )
                 }

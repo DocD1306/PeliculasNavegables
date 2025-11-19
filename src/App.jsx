@@ -18,6 +18,7 @@ function App() {
         <Route index element={<HomePage/>} />
         <Route path="peliculas" element={<MoviesPage/>} />
         <Route path="interpretes" element={<InterpretersPage/>}/>
+        <Route path="detail/:id" element={<Detail/>}/>
 
         <Route path="admin" element={ isAuthenticated ? <AdminPage /> : <Navigate to="/" replace />}>
 

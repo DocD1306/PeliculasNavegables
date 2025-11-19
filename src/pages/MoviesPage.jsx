@@ -1,6 +1,7 @@
 import movies from "../data/movies-interpreters.js";
 import MainContent from "../components/MainContent.jsx";
 import ReusableCard from "../components/ReusableCard.jsx";
+import { Link } from "react-router-dom";
 
 function MoviesPage() {
 
@@ -16,15 +17,17 @@ function MoviesPage() {
             <div className="card_grid">
                 {
                     movies.map( (movie, index) => (
-                            <ReusableCard
-                                key={index}
-                                nombre={movie.nombre}
-                                foto={movie.cartelera}
-                                esNota10={movie.nota === 10} // pasamos si la nota es 10
-                                textoDestacado="Película destacada"
-                            >
-                            {movie.resumen}
-                            </ReusableCard>
+                            <Link to={`/detail/${movie.id}`} key={movie.id} >
+                                <ReusableCard
+                                    key={index}
+                                    nombre={movie.nombre}
+                                    foto={movie.cartelera}
+                                    esNota10={movie.nota === 10} // pasamos si la nota es 10
+                                    textoDestacado="Película destacada"
+                                >
+                                {movie.clasificacion}
+                                </ReusableCard>
+                            </Link>
                         )
                     )
                 }
