@@ -1,29 +1,26 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, NavLink } from "react-router-dom";
 import Header from "./Header.jsx";
+import { useState } from "react";
 
 function NavigationBar() {
+    const [open, setOpen] = useState(false);
+
     return (
         <>
             <Header>
-                <nav className="navigation_bar">
+                <nav className={open ? "navigation_bar block" : " navigation_bar hidden"}>
                     <Link to="/">
                         <h1 className="color_white font-heading-h1">Películas</h1>
                     </Link>
-                    <div className="navigation_links">
-                        <Link to="/" className="body-text color_white">Inicio</Link>
-                        <Link to="/peliculas" className="body-text color_white">Películas</Link>
-                        <Link to="/interpretes" className="body-text color_white">Intérpretes</Link>
-                    </div>
-
                     <button onClick={() => setOpen(!open)}>
                         ☰
                     </button>
-                    {/* Menú controlado por el estado */}
-                    <nav className={open ? "block" : "hidden"}>
-                        <NavLink to="/" onClick={() => setOpen(false)}>Inicio</NavLink>
-                        <NavLink to="/peliculas" onClick={() => setOpen(false)}>Películas</NavLink>
-                        <NavLink to="/interpretes" onClick={() => setOpen(false)}>Intérpretes</NavLink>
-                    </nav>
+                    <div className="navigation_links">
+                        <NavLink to="/" onClick={() => setOpen(false)} className="body-text color_white">Inicio</NavLink>
+                        <NavLink to="/peliculas" onClick={() => setOpen(false)} className="body-text color_white">Películas</NavLink>
+                        <NavLink to="/interpretes" onClick={() => setOpen(false)} className="body-text color_white">Intérpretes</NavLink>
+                    </div>
+
                 </nav>
             </Header>
             <Outlet />  
