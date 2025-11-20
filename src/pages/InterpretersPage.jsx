@@ -1,6 +1,7 @@
 import ReusableCard from "../components/ReusableCard.jsx";
 import interpreters from "../data/movies-interpreters.js";
 import MainContent from "../components/MainContent.jsx";
+import { Link } from "react-router-dom";
 
 function InterpretersPage() {
     return (
@@ -13,7 +14,7 @@ function InterpretersPage() {
                 {
                 interpreters.map( pelicula =>
                     pelicula.actores.map((actor, index) => (
-                        <Link to={`/detail/${movie.id}`} key={movie.id} >
+                        <Link to={`/detail/${pelicula.id}-${index}`} key={`${pelicula.id}-${index}`} >
                             <ReusableCard
                                 key={index}
                                 nombre={actor.nombre}

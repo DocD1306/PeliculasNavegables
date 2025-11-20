@@ -14,6 +14,16 @@ function NavigationBar() {
                         <Link to="/peliculas" className="body-text color_white">Películas</Link>
                         <Link to="/interpretes" className="body-text color_white">Intérpretes</Link>
                     </div>
+
+                    <button onClick={() => setOpen(!open)}>
+                        ☰
+                    </button>
+                    {/* Menú controlado por el estado */}
+                    <nav className={open ? "block" : "hidden"}>
+                        <NavLink to="/" onClick={() => setOpen(false)}>Inicio</NavLink>
+                        <NavLink to="/peliculas" onClick={() => setOpen(false)}>Películas</NavLink>
+                        <NavLink to="/interpretes" onClick={() => setOpen(false)}>Intérpretes</NavLink>
+                    </nav>
                 </nav>
             </Header>
             <Outlet />  

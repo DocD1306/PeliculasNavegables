@@ -6,6 +6,7 @@ import MoviesPage from "./pages/MoviesPage.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
 import AdminNavigationBar from "./components/AdminNavigationBar.jsx";
+import Detail from "./pages/Detail.jsx";
 
 function App() {
 
