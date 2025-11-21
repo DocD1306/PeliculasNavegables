@@ -40,7 +40,7 @@ Main Title
 .main_section__title {
   @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl 
          font-bold text-(--colorprimary) 
-         mt-4 mb-6 leading-snug;
+         mb-6 leading-snug;
 }
 
 /* 
@@ -87,9 +87,8 @@ Navigation Bar
 }
 
 .navigation_links {
-  @apply flex gap-4 sm:gap-6 md:gap-10 text-white text-sm sm:text-base;
+  @apply gap-4 sm:gap-6 md:gap-10 text-white text-sm sm:text-base;
 }
-
 /* 
 ====================================
 Typography Utilities

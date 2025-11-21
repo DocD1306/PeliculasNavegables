@@ -4,11 +4,9 @@ function ReusableCard(props) {
     /*
     Se ha hecho este componente reutilizable tanto para intérpretes como para películas. 
     */
-
     return (
 
         <article
-            tabIndex="0"
             className="article_card"
             aria-label={`Intérprete ${nombre}${esNota10 ? ', destacado' : ''}`}
         >

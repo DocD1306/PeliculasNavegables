@@ -10,29 +10,28 @@ function MoviesPage() {
     */
     return (
         <>
-            <MainContent titulo="Nuestro catálogo de películas">
-            
-            <p className="body-text">Listado de películas disponibles:</p>
+            <MainContent>
+                <h1 id="main-section-title" className="font-heading-h1 main_section__title"> Nuestro catálogo de películas </h1>
+                <p className="body-text">Listado de películas disponibles:</p>
 
-            <div className="card_grid">
-                {
-                    movies.map( (movie, index) => (
-                            <Link to={`/detail/${movie.id}`} key={movie.id} >
-                                <ReusableCard
-                                    key={index}
-                                    nombre={movie.nombre}
-                                    foto={movie.cartelera}
-                                    esNota10={movie.nota === 10} // pasamos si la nota es 10
-                                    textoDestacado="Película destacada"
-                                >
-                                {movie.clasificacion}
-                                </ReusableCard>
-                            </Link>
-                        )
-                    )
-                }
-            </div>
-            
+                <ul className="card_grid">
+                    {
+                        movies.map( (movie) => (
+                            <li key={movie.id}>
+                                <Link to={`/detail/${movie.id}`} >
+                                    <ReusableCard
+                                        nombre={movie.nombre}
+                                        foto={movie.cartelera}
+                                        esNota10={movie.nota === 10} // pasamos si la nota es 10
+                                        textoDestacado="Película destacada"
+                                    >
+                                    {movie.clasificacion}
+                                    </ReusableCard>
+                                </Link>
+                            </li>
+                        ))
+                    }
+                </ul>            
             </MainContent>
         </>
     );

@@ -6,31 +6,35 @@ import { Link } from "react-router-dom";
 function InterpretersPage() {
     return (
         <>
-        <MainContent titulo="Intérpretes de películas destacadas">
-            
-            <p className="body-text"> Listado de intérpretes disponibles:</p>
+            <MainContent>
+                <h1 id="main-section-title" className="font-heading-h1 main_section__title"> Nuestros intérpretes destacados </h1>
+                <p className="body-text"> Listado de intérpretes disponibles:</p>
 
-            <div className="card_grid">
-                {
-                interpreters.map( pelicula =>
-                    pelicula.actores.map((actor, index) => (
-                        <Link to={`/detail/${pelicula.id}-${index}`} key={`${pelicula.id}-${index}`} >
-                            <ReusableCard
-                                key={index}
-                                nombre={actor.nombre}
-                                foto={actor.imagen}
-                                esNota10={pelicula.nota === 10} // pasamos si la nota es 10
-                                textoDestacado="Intérprete destacado"
-                            >
-                            {actor.biografia}
-                            </ReusableCard>
-                        </Link>
-                    ))
-                )
-                }
-            </div>
-            
-        </MainContent>
+                {/* Agrupamos las tarjetas en una lista para anunciar la cantidad de elementos */}
+                <ul className="card_grid">
+                    {
+                    interpreters.map( pelicula =>
+                        pelicula.actores.map((actor, index) => (
+                            <li key={`${pelicula.id}-${index}`}>
+                                <Link 
+                                    to={`/detail/${pelicula.id}-${index}`} 
+                                    aria-label={`Ver detalles del intérprete ${actor.nombre}`}
+                                >
+                                    <ReusableCard
+                                        nombre={actor.nombre}
+                                        foto={actor.imagen}
+                                        esNota10={pelicula.nota === 10} // pasamos si la nota es 10
+                                        textoDestacado="Intérprete destacado"
+                                    >
+                                    {actor.biografia}
+                                    </ReusableCard>
+                                </Link>
+                            </li>
+                        ))
+                    )
+                    }
+                </ul>    
+            </MainContent>
       </>
 
     );
