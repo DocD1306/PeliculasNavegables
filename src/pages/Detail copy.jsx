@@ -16,11 +16,15 @@ function Detail() {
                    Vincula este contenedor con un elemento de texto existente (el h1 con id="movie-title").
                    El lector anunciará: "Sección: [Nombre de la película]".
                 */}
-               <section aria-labelledby="movie-title">
-
+                <section aria-labelledby="movie-title" className="max-w-5xl flex flex-col items-center w-full">
+                    
+                    {/* aria-label="texto": 
+                       Proporciona una etiqueta accesible para elementos interactivos cuyo texto visible 
+                       es ambiguo (como "Volver" o un icono). El lector leerá esto en lugar del texto visual.
+                    */}
                     <button 
                         onClick={() => navigate(-1)} 
-                        className="px-5 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors shadow-sm cursor-pointer"
+                        className="self-start px-5 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors shadow-sm cursor-pointer"
                         aria-label="Volver al listado de películas"
                     >
                         Volver
@@ -29,8 +33,16 @@ function Detail() {
                     <h1 id="movie-title" className="main_section__title text-center">{movie.nombre}</h1>
                     
                     <section className="w-full flex flex-col md:flex-row gap-8 items-center md:items-start mb-10">
-
+                        
+                        {/* <figure>: 
+                           Elemento semántico para agrupar contenido multimedia (imágenes, diagramas) 
+                           con su leyenda opcional. Aporta estructura al documento.
+                        */}
                         <figure className="w-full md:w-1/3 m-0">
+                            {/* alt="descripción": 
+                               Texto alternativo OBLIGATORIO. Describe la imagen si no carga visualmente 
+                               o para usuarios con discapacidad visual.
+                            */}
                             <img 
                                 src={movie.cartelera} 
                                 alt={`Póster de la película ${movie.nombre}`} 
@@ -43,7 +55,11 @@ function Detail() {
 
                         <section className="flex flex-col gap-4 w-full md:w-2/3 bg-gray-50 p-6 rounded-xl shadow-sm border border-gray-100 items-center text-center">
                             <h2 id="details-heading" className="font-heading-h5 color_primary border-b border-primary pb-2 w-full">Detalles</h2>
-
+                            
+                            {/* <dl>, <dt>, <dd>: 
+                               Lista de Descripción. Es la forma semánticamente correcta de marcar pares 
+                               de clave-valor (metadatos), permitiendo una navegación más lógica que usar simples divs o párrafos.
+                            */}
                             <dl className="body-text flex flex-col gap-2 w-full" aria-labelledby="details-heading">
                                 <div className="flex flex-wrap justify-center gap-2 items-baseline">
                                     <dt className="color_primary font-bold min-w-fit">Clasificación:</dt>
@@ -67,6 +83,10 @@ function Detail() {
                         <ul className="card_grid list-none p-0">
                             {movie.actores.map((actor, i) => (
                                 <li key={i}>
+                                    {/* <article>: 
+                                       Indica que este contenido es una composición independiente (una tarjeta de actor)
+                                       que tiene sentido por sí misma dentro de la lista.
+                                    */}
                                     <article className="h-full">
                                         <Link 
                                             to={`/detail/${movie.id}-${i}`}
@@ -74,19 +94,24 @@ function Detail() {
                                             aria-label={`Ver detalles del actor ${actor.nombre}`}
                                         >
                                             <figure className="m-0 flex flex-col h-full">
+                                                {/* aria-hidden="true": 
+                                                   Oculta el elemento al lector de pantalla. Se usa aquí porque la imagen es decorativa 
+                                                   (el nombre del actor ya se lee en el figcaption), evitando redundancia.
+                                                */}
                                                 <img 
                                                     src={actor.imagen} 
                                                     alt="" 
                                                     className="w-full aspect-[3/4] object-cover rounded-lg mb-2 shadow-sm"
                                                     aria-hidden="true" 
                                                 />
+
+                                                {/* <figcaption>: 
+                                                   Leyenda de la figura. Vincula programáticamente el texto con la imagen anterior.
+                                                */}
                                                 <figcaption className="sr-only">
                                                     Fotografía del intérprete.
                                                 </figcaption>
                                             </figure>
-
-                                            {/* Nombre visible del intérprete debajo de la tarjeta */}
-                                            <p className="mt-2 font-semibold">{actor.nombre}</p>
                                         </Link>
                                     </article>
                                 </li>
