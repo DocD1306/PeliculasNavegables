@@ -117,7 +117,7 @@ Body Text
 */
 
 .body-text {
-  @apply text-base sm:text-lg md:text-xl;
+  @apply text-base sm:text-lg md:text-lg;
   color: var(--body-text-font-color);
   line-height: var(--body-text-line-height);
 }

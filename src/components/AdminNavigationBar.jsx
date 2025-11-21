@@ -1,5 +1,4 @@
 import { Outlet, Link } from "react-router-dom";
-import Header from "./Header.jsx";
 import { useState } from "react";
 import { NavLink } from "react-router-dom"; 
 import MainContent from "./MainContent.jsx";
@@ -10,7 +9,7 @@ function AdminNavigationBar() {
 
     return (
         <>
-            <Header>
+            <header>
                 {/* Añadimos 'aria-label' al nav para identificar esta navegación específica 
                     si hubiera más de una en la página (ej: footer, sidebar).
                 */}
@@ -21,7 +20,7 @@ function AdminNavigationBar() {
                         <h1 className="color_white font-heading-h1">Películas</h1>
                     </Link>
 
-                    {/* Mejoras de Accesibilidad en el Botón:
+                    {/* Accesibilidad en el Botón:
                         1. type="button": Previene comportamientos inesperados de submit.
                         2. aria-label: Describe la acción para usuarios que no ven el icono "☰".
                         3. aria-expanded: Informa al lector de pantalla si el menú está abierto (true) o cerrado (false).
@@ -103,12 +102,9 @@ function AdminNavigationBar() {
                     </ul>
 
                 </nav>
-            </Header>
+            </header>
 
-            {/* El main debe envolver el contenido principal. 
-                Outlet renderiza las rutas hijas, por lo que idealmente debería estar dentro de un main 
-                para permitir a los usuarios saltar la navegación directamente al contenido.
-            */}
+            {/*Envolvemos el Outlet en MainContent para mantener el diseño consistente en las páginas.*/}
             <MainContent>
                 <Outlet />  
             </MainContent>

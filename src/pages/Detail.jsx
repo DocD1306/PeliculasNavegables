@@ -29,7 +29,7 @@ function Detail() {
                     */}
                     <button 
                         onClick={() => navigate("/peliculas")} 
-                        className="self-start mb-6 px-5 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors shadow-sm cursor-pointer"
+                        className="self-start px-5 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors shadow-sm cursor-pointer"
                         aria-label="Volver al listado de películas"
                     >
                         Volver

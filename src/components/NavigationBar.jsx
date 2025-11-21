@@ -1,5 +1,4 @@
 import { Outlet, Link, NavLink } from "react-router-dom";
-import Header from "./Header.jsx";
 import { useState } from "react";
 import MainContent from "./MainContent.jsx";
 
@@ -10,7 +9,7 @@ function NavigationBar() {
 
     return (
         <>
-            <Header>
+            <header>
                 {/* Añadimos 'aria-label' al nav para identificar esta navegación específica 
                     si hubiera más de una en la página (ej: footer, sidebar).
                 */}
@@ -93,12 +92,9 @@ function NavigationBar() {
                     </ul>
 
                 </nav>
-            </Header>
+            </header>
 
-            {/* El main debe envolver el contenido principal. 
-                Outlet renderiza las rutas hijas, por lo que idealmente debería estar dentro de un main 
-                para permitir a los usuarios saltar la navegación directamente al contenido.
-            */}
+            {/*Envolvemos el Outlet en MainContent para mantener el diseño consistente en las páginas.*/}
             <MainContent>
                 <Outlet />  
             </MainContent>
