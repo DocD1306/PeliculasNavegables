@@ -11,12 +11,7 @@ function Detail() {
         const movie = movies.find(m => m.id === Number(id));
         
         return (
-            /* <main>: 
-               Indica a la tecnología de asistencia dónde empieza el contenido principal y único 
-               de la página, permitiendo a los usuarios saltar directamente aquí ("Skip to main content").
-            */
-            <main className="main_content">
-                
+            <>
                 {/* aria-labelledby="id": 
                    Vincula este contenedor con un elemento de texto existente (el h1 con id="movie-title").
                    El lector anunciará: "Sección: [Nombre de la película]".
@@ -28,7 +23,7 @@ function Detail() {
                        es ambiguo (como "Volver" o un icono). El lector leerá esto en lugar del texto visual.
                     */}
                     <button 
-                        onClick={() => navigate("/peliculas")} 
+                        onClick={() => navigate(-1)} 
                         className="self-start px-5 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors shadow-sm cursor-pointer"
                         aria-label="Volver al listado de películas"
                     >
@@ -120,7 +115,7 @@ function Detail() {
                         </ul>
                     </section>
                 </section>
-            </main>
+            </>
         );
     }
 
@@ -131,11 +126,10 @@ function Detail() {
     const actor = movie.actores[Number(actorIndex)];
 
     return (
-        <main className="main_content">
+        <>
             <article aria-labelledby="actor-name" className="max-w-4xl flex flex-col items-center text-center md:text-left w-full">
-                
                 <button 
-                    onClick={() => navigate("/interpretes")} 
+                    onClick={() => navigate(-1)} 
                     className="self-start px-5 py-2 bg-gray-100 text-gray-700 font-medium rounded-lg hover:bg-gray-200 transition-colors shadow-sm cursor-pointer"
                     aria-label="Volver al listado de intérpretes"
                 >
@@ -179,7 +173,7 @@ function Detail() {
                     </Link>
                 </section>
             </article>
-        </main>
+        </>
     );
 }
 export default Detail;
